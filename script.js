@@ -29,6 +29,8 @@ This is a comment that can span multiple lines
 
 // Global Constants
 const clueHoldTime = 1000; // how long to hold each clue's light/sound
+const cluePauseTime = 333; //how long to pause in between clues
+const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 
 // Global Variables
 var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
@@ -36,6 +38,7 @@ var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5; // must be betwen 0.0 and 1.0
+var guessCounter = 0;
 
 function startGame(){
   //initialize game variables
@@ -44,6 +47,7 @@ function startGame(){
   // swap the Start and Stop buttons
   document.getElementById("startButton").classList.add("hidden");
   document.getElementById("stopButton").classList.remove("hidden");
+  playClueSequence();
 }
 
 function stopGame(){
@@ -66,6 +70,57 @@ function playSingleClue(btn){
     setTimeout(clearButton,clueHoldTime,btn);
   }
 }
+
+function playClueSequence(){
+  guessCounter = 0;
+  let delay = nextClueWaitTime; //set delay to initial wait time
+  for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
+    console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
+    setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
+    delay += clueHoldTime 
+    delay += cluePauseTime;
+  }
+}
+
+function loseGame(){
+  stopGame();
+  alert("Game Over. You lost.");
+}
+
+function winGame(){
+  stopGame();
+  alert("Game Over. You Won!")
+}
+
+function guess(btn){
+  console.log("user guessed: " + btn);
+  
+  if(!gamePlaying){
+    return;
+  }
+  
+  if(pattern[guessCounter] == btn){
+    //Guess was correct!
+    if(guessCounter == progress){
+      if(progress == pattern.length - 1){
+        //GAME OVER: WIN!
+        winGame();
+      }else{
+        //Pattern correct. Add next segment
+        progress++;
+        playClueSequence();
+      }
+    }else{
+      //so far so good... check the next guess
+      guessCounter++;
+    }
+  }else{
+    //Guess was incorrect
+    //GAME OVER: LOSE!
+    loseGame();
+  }
+}    
+  
 
 
 
