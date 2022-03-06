@@ -11,6 +11,7 @@ console.log("Hello 🌎");
 Make the "Click me!" button move when the visitor clicks it:
 - First add the button to the page by following the "Next steps" in the README
 */
+/* delete this if needded
 const btn = document.querySelector("button"); // Get the button from the page
 // Detect clicks on the button
 if (btn) {
@@ -25,3 +26,23 @@ if (btn) {
 This is a comment that can span multiple lines 
 - use comments to make your own notes!
 */
+
+// Global Variables
+var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
+var progress = 0;
+var gamePlaying = false;
+
+function startGame(){
+  //initialize game variables
+  progress = 0;
+  gamePlaying = true;
+  // swap the Start and Stop buttons
+  document.getElementById("startBtn").classList.add("hidden");
+  document.getElementById("stopBtn").classList.remove("hidden");
+}
+
+function stopGame(){
+  gamePlaying = false;
+  document.getElementById("startBtn").classList.remove("hidden");
+  document.getElementById("stopBtn").classList.add("hidden");
+}
