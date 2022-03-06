@@ -100,23 +100,22 @@ function guess(btn){
   }
   
   if(pattern[guessCounter] == btn){
-    //Guess was correct!
+    //keep going
     if(guessCounter == progress){
       if(progress == pattern.length - 1){
-        //GAME OVER: WIN!
+        //win
         winGame();
       }else{
-        //Pattern correct. Add next segment
+        //keep going
         progress++;
         playClueSequence();
       }
     }else{
-      //so far so good... check the next guess
+      //keep going
       guessCounter++;
     }
   }else{
-    //Guess was incorrect
-    //GAME OVER: LOSE!
+    //lose game
     loseGame();
   }
 }    
