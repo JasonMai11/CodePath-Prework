@@ -111,8 +111,29 @@ END Glitch hello-app default styles
 ******************************************************************************/
 
 body {
-  font-family: HK Grotesk;
-  background-color: var(--color-bg);
+  font-family: helvetica, arial, sans-serif /*HK Grotesk*/
+  margin: 2em;
+  background-color: slategrey;
+  color: white;
+}
+
+h1 {
+  font-family: verdana, arial, sans-serif;
+}
+
+button {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+#gameButtonArea > button {
+  width: 200px;
+  height: 200px;
+  margin: 2px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* Page structure */
@@ -152,7 +173,7 @@ body {
   margin: 1rem auto 0;
 }
 
-/* Button - Add it from the README instructions */
+/* Button - Add it from the README instructions 
 button,
 input {
   font-family: inherit;
@@ -164,6 +185,7 @@ input {
   padding: 0.5rem 1rem;
   transition: 500ms;
 }
+*/
 
 /* Subheading */
 h2 {
