@@ -1,48 +1,36 @@
-/*
-This is your site JavaScript code - you can add interactivity and carry out processing
-- Initially the JS writes a message to the console, and moves a button you can add from the README
-*/
-
-// Print a message in the browser's dev tools console each time the page loads
-// Use your menus or right-click / control-click and choose "Inspect" > "Console"
-console.log("Hello 🌎");
-
-/* 
-Make the "Click me!" button move when the visitor clicks it:
-- First add the button to the page by following the "Next steps" in the README
-*/
-/* delete this if needded
-const btn = document.querySelector("button"); // Get the button from the page
-// Detect clicks on the button
-if (btn) {
-  btn.onclick = function() {
-    // The JS works in conjunction with the 'dipped' code in style.css
-    btn.classList.toggle("dipped");
-  };
-}
-
-// This is a single line JS comment
-/*
-This is a comment that can span multiple lines 
-- use comments to make your own notes!
-*/
-
 // Global Constants
 const clueHoldTime = 1000; // how long to hold each clue's light/sound
 const cluePauseTime = 333; //how long to pause in between clues
 const nextClueWaitTime = 1000; //how long to wait before starting playback of the clue sequence
 
+
+// randomizes the pattern each time the game is played
+function randomizer(arr) {
+  let currentIndex = arr.length,  randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [arr[currentIndex], arr[randomIndex]] = [
+      arr[randomIndex], arr[currentIndex]];
+  }
+
+  return arr;
+}
 // Global Variables
-var pattern = [2, 2, 4, 3, 2, 1, 2, 4];
+var pattern = [3, 2, 1, 4, 5];
 var progress = 0;
 var gamePlaying = false;
 var tonePlaying = false;
 var volume = 0.5; // must be betwen 0.0 and 1.0
 var guessCounter = 0;
+var mistakes = 0;
 
 function startGame(){
   //initialize game variables
   progress = 0;
+  mistakes = 0;
+  document.getElementById("life").innerHTML = 0;
+  randomizer(pattern)
   gamePlaying = true;
   // swap the Start and Stop buttons
   document.getElementById("startButton").classList.add("hidden");
@@ -54,6 +42,10 @@ function stopGame(){
   gamePlaying = false;
   document.getElementById("startButton").classList.remove("hidden");
   document.getElementById("stopButton").classList.add("hidden");
+}
+
+function addMistake(){
+  document.getElementById("life").innerHTML = mistakes;
 }
 
 function lightButton(btn){
@@ -74,7 +66,7 @@ function playSingleClue(btn){
 function playClueSequence(){
   guessCounter = 0;
   let delay = nextClueWaitTime; //set delay to initial wait time
-  for(let i=0;i<=progress;i++){ // for each clue that is revealed so far
+  for(let i=0; i<=progress; i++){ // for each clue that is revealed so far
     console.log("play single clue: " + pattern[i] + " in " + delay + "ms")
     setTimeout(playSingleClue,delay,pattern[i]) // set a timeout to play that clue
     delay += clueHoldTime 
@@ -89,7 +81,7 @@ function loseGame(){
 
 function winGame(){
   stopGame();
-  alert("Game Over. You Won!")
+  alert("You Won!")
 }
 
 function guess(btn){
@@ -116,8 +108,13 @@ function guess(btn){
     }
   }else{
     //lose game
-    loseGame();
+    mistakes++;
+    addMistake();
+    if(mistakes == 3){
+      loseGame();
+    }
   }
+  
 }    
   
 
@@ -128,10 +125,11 @@ function guess(btn){
 
 // Sound Synthesis Functions
 const freqMap = {
-  1: 261.6,
-  2: 329.6,
-  3: 392,
-  4: 466.2
+  1: 370,
+  2: 400,
+  3: 260,
+  4: 450,
+  5: 500,
 }
 function playTone(btn,len){ 
   o.frequency.value = freqMap[btn]
