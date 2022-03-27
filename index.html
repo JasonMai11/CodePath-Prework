@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <title>Hello!</title>
+    <title>Light and Memory Sound Game</title>
     
     <!-- import the webpage's stylesheet -->
     <link rel="stylesheet" href="/style.css">
@@ -18,6 +18,14 @@
     
     <p>
       Welcome to the game! Repeat the pattern that you see on the screen by pressing the buttons.
+    </p>
+    
+    <p>
+    <b><i>If you make 3 mistakes, it results in a loss!</i></b>  
+    </p>
+    
+    <p>
+      Mistake Counter : <p id="life"> 0 </p>
     </p>
     
     <!-- Start and Stop buttons -->
@@ -34,6 +42,7 @@
       <button id = "button2" onclick="guess(2)" onmousedown="startTone(2)" onmouseup="stopTone()"></button>
       <button id = "button3" onclick="guess(3)" onmousedown="startTone(3)" onmouseup="stopTone()"></button>
       <button id = "button4" onclick="guess(4)" onmousedown="startTone(4)" onmouseup="stopTone()"></button>
+      <button id = "button5" onclick="guess(5)" onmousedown="startTone(5)" onmouseup="stopTone()"></button>
     </div>
     
     
