@@ -4,7 +4,7 @@
 
 Submitted by: **Jason Mai**
 
-Time spent: **8** hours spent in total
+Time spent: **14** hours spent in total
 
 Link to project: (https://glitch.com/edit/#!/jm-codepath-preworkproject)
 
@@ -22,40 +22,41 @@ The following **required** functionality is complete:
 
 The following **optional** features are implemented:
 
-* [ ] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
+* [X] Any HTML page elements (including game buttons) has been styled differently than in the tutorial
 * [X] Buttons use a pitch (frequency) other than the ones in the tutorial
 * [X] More than 4 functional game buttons
-* [ ] Playback speeds up on each turn
 * [X] Computer picks a different pattern each time the game is played
 * [X] Player only loses after 3 mistakes (instead of on the first mistake)
-* [ ] Game button appearance change goes beyond color (e.g. add an image)
-* [ ] Game button sound is more complex than a single tone (e.g. an audio file, a chord, a sequence of multiple tones)
-* [ ] User has a limited amount of time to enter their guess on each turn
-
-The following **additional** features are implemented:
-
-- [ ] List anything else that you can get done to improve the app!
 
 ## Video Walkthrough (GIF)
+Original Gif with required implementations
+![](http://g.recordit.co/GeXQhU4UJa.gif)
 
-If you recorded multiple GIFs for all the implemented features, you can add them here:
-![](gif1-link-here)
-![](gif2-link-here)
-![](gif3-link-here)
-![](gif4-link-here)
+1. Implemented features (added 5th button, changed background, fonts, color of buttons, and frequency of each button.
+![](http://g.recordit.co/k48WBmG38F.gif)
+
+2. Implemented (3 mistakes feature)
+![](http://g.recordit.co/6z2QFHR3pl.gif)
+
+3. Implemented (Computer picks a different pattern the game is played each time, and changed button style)
+![](http://g.recordit.co/B5CjTEgoDB.gif)
+
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
-[YOUR ANSWER HERE]
+- w3Schools html color picker
+- w3Schools fonts
 
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? (recommended 200 - 400 words) 
-[YOUR ANSWER HERE]
+    One of the challenges I encountered was that I was unable to figure out what to specifically use when it came to changing randomizing the pattern each time the game was played. I knew I had to create another function to handle randomizing the pattern but I was unsure on how to approach it. I was then able to solve my issue by creating a function called randomizer() that randomizes the array with a preset pattern of [1, 2, 3 ,4, 5] since I had five buttons. The function would be called each time the start button was pressed and would rearrange the array so no pattern would happen again each time the game is played. 
+
+    Another challenge I encountered is creating the three lives implementation into the Light and Sound Memory Game. It wasn't a hard problem to solve at all, I was able to make an accumulator that would count each time a person makes a mistake and if a person makes three mistakes then the game would end. The problem was mainly showing the user how many mistakes made themselves. It took me less than half an hour to do this but I ran into a bug where the mistake counter was one behind after every mistake and to solve this I accumulated to the html before the function addMistake() (my accumulation function) was called.
 
 3. What questions about web development do you have after completing your submission? (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+    Currently I don't have any questions about web development besides the exception of how I will be able to utilize more of JavaScript's language and how to implement more features into a web with JavaScript. I had previously took HTML and CSS courses in High School and re-learned them in my introduction to Computer Science at my freshman year of college with web development but have briefly implemented JavaScript into web development. So I am looking forward to learning more about using JavaScript in web development and what more features or implementations I would be able to do using JavaScript in web development.
 
 4. If you had a few more hours to work on this project, what would you spend them doing (for example: refactoring certain functions, adding additional features, etc). Be specific. (recommended 100 - 300 words) 
-[YOUR ANSWER HERE]
+    If I were given a few more hours to work on this project, I would try to implement a feature that allows a user to set a level of difficulty that they would prefer so the game doesn't become repetitive and easy after constant play time. When it comes to setting the level of difficulty, I would approach this by making levels from one to ten and each level would have a timer ticking down and as a user progresses then the time they would have to repeat the pattern would be shortened. To add uniqueness to the levels, levels eight through ten would make sure that the buttons will swap colors at a time interval between two to four seconds so a user doesn't anticipate to click a color at the same spot every time. For example, buttons one through four can represent (red, green, blue, purple) and a user has to repeat the color {red, blue}, we can make the colors swap one to the right every 3 seconds while the user is attempting to repeat the pattern so then buttons one through four would be (purple, red, green, blue).
 
 
 
