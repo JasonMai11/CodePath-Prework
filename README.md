@@ -62,7 +62,7 @@ Original Gif with required implementations
 
 ## Interview Recording URL Link
 
-[My 5-minute Interview Recording](your-link-here)
+[My 5-minute Interview Recording](https://buffalo.zoom.us/rec/share/9P6xGc14_UNUXarRTLDzVRCpt6KL--sNOXTqroBKkQ50lVTvoIEAdTRhr5XWock.lUt22T7HBOdUfdSF?startTime=1648778723000)
 
 
 ## License
