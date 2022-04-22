@@ -27,6 +27,7 @@ The following **optional** features are implemented:
 * [X] More than 4 functional game buttons
 * [X] Computer picks a different pattern each time the game is played
 * [X] Player only loses after 3 mistakes (instead of on the first mistake)
+* [X] Added a background image  
 
 ## Video Walkthrough (GIF)
 Original Gif with required implementations
@@ -40,6 +41,9 @@ Original Gif with required implementations
 
 3. Implemented (Computer picks a different pattern the game is played each time, and changed button style)
 ![](http://g.recordit.co/B5CjTEgoDB.gif)
+
+4. Included a different background image for the game
+![](http://g.recordit.co/tcoAGxOXzZ.gif)
 
 
 ## Reflection Questions
