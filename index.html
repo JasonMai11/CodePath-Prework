@@ -20,6 +20,7 @@
       Welcome to the game! Repeat the pattern that you see on the screen by pressing the buttons.
     </p>
     
+    
     <p>
     <b><i>If you make 3 mistakes, it results in a loss!</i></b>  
     </p>
@@ -27,14 +28,20 @@
     <p>
       Mistake Counter : <p id="life"> 0 </p>
     </p>
+  
+      <p>
+      Timer : <p id="demo">0</p>
+      </p>
     
     <!-- Start and Stop buttons -->
-    <button id = "startButton" onclick = "startGame()"> 
+    <button id = "startButton" onclick = "startGame(); start()"> 
       Start 
     </button>
-    <button id = "stopButton" class = "hidden" onclick = "stopGame()"> 
+    <button id = "stopButton" class = "hidden" onclick = "stopGame(); stop()"> 
       Stop 
     </button>
+  
+
     
     <!-- Light buttons -->
     <div id = "gameButtonArea">
