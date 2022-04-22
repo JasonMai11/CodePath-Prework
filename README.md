@@ -43,8 +43,7 @@ Original Gif with required implementations
 ![](http://g.recordit.co/B5CjTEgoDB.gif)
 
 4. Included a different background image for the game
-![](http://g.recordit.co/tcoAGxOXzZ.gif)
-
+![](http://g.recordit.co/B5CjTEgoDB.gif)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
