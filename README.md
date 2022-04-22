@@ -42,7 +42,7 @@ Original Gif with required implementations
 3. Implemented (Computer picks a different pattern the game is played each time, and changed button style)
 ![](http://g.recordit.co/B5CjTEgoDB.gif)
 
-4. Added Background image to the game
+4. Added Background image to the game for more style
 ![](http://g.recordit.co/tcoAGxOXzZ.gif)
 
 ## Reflection Questions
