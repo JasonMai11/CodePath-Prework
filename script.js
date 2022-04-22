@@ -24,11 +24,37 @@ var tonePlaying = false;
 var volume = 0.5; // must be betwen 0.0 and 1.0
 var guessCounter = 0;
 var mistakes = 0;
+var timer = 0;
+var value = 0;
+
+function changeValue() {
+  document.getElementById("demo").innerHTML = ++value;
+  timer = value;
+  if(timer == 20){
+    loseGame();
+    stop()
+  }
+}
+
+var timerInterval = null;
+
+function start() {
+  stop(); // stoping the previous counting (if any)
+  value = 0;
+  timerInterval = setInterval(changeValue, 1000);  
+}
+var stop = function() {
+  clearInterval(timerInterval);
+}
 
 function startGame(){
+  
+  
   //initialize game variables
   progress = 0;
   mistakes = 0;
+  timer = 0;
+  value = 0;
   document.getElementById("life").innerHTML = 0;
   randomizer(pattern)
   gamePlaying = true;
@@ -47,6 +73,7 @@ function stopGame(){
 function addMistake(){
   document.getElementById("life").innerHTML = mistakes;
 }
+
 
 function lightButton(btn){
   document.getElementById("button"+btn).classList.add("lit")
@@ -84,15 +111,17 @@ function winGame(){
   alert("You Won!")
 }
 
+if(document.getElementById("demo").innerHTML == 5){
+    loseGame();
+}
+
 function guess(btn){
   console.log("user guessed: " + btn);
-  
   if(!gamePlaying){
     return;
   }
-  
   if(pattern[guessCounter] == btn){
-    //keep going
+  //keep going
     if(guessCounter == progress){
       if(progress == pattern.length - 1){
         //win
