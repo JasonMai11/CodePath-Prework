@@ -96,8 +96,9 @@ END Glitch hello-app default styles
 body {
   font-family: HK Grotesk, HK Grotesk, HK Grotesk; /*HK Grotesk*/
   margin: 2em;
+  background-image: url(https://cdn.glitch.global/9eb159c5-610d-4598-807a-d9df2008a215/CoolBackground.png?v=1650664569504);
   background-color: white;
-  color: slategrey;
+  color: white;
 }
 
 h1 {
@@ -222,3 +223,4 @@ h2 {
 .dipped {
   transform: translateY(5px);
 }
+
