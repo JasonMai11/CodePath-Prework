@@ -28,6 +28,7 @@ The following **optional** features are implemented:
 * [X] Computer picks a different pattern each time the game is played
 * [X] Player only loses after 3 mistakes (instead of on the first mistake)
 * [X] Added a background image  
+* [X] Added a timer (can be changed to any time) *(The one shown in demo has a limit of 20 seconds)
 
 ## Video Walkthrough (GIF)
 Original Gif with required implementations
@@ -44,6 +45,9 @@ Original Gif with required implementations
 
 4. Added Background image to the game for more style
 ![](http://g.recordit.co/DIAMd90rSE.gif)
+
+5. Added a timer to the game (limit can be changed, but in demo it was 20 seconds)
+![](http://g.recordit.co/rr3JFq45kt.gif)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
