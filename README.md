@@ -4,7 +4,7 @@
 
 Submitted by: **Jason Mai**
 
-Time spent: **14** hours spent in total
+Time spent: **17** hours spent in total
 
 Link to project: (https://glitch.com/edit/#!/jm-codepath-preworkproject)
 
@@ -28,7 +28,7 @@ The following **optional** features are implemented:
 * [X] Computer picks a different pattern each time the game is played
 * [X] Player only loses after 3 mistakes (instead of on the first mistake)
 * [X] Added a background image  
-* [X] Added a timer (can be changed to any time) *(The one shown in demo has a limit of 20 seconds)
+* [X] Added a timer per turn(can be changed to any time) *(The one shown in demo has a limit of 20 seconds)
 
 ## Video Walkthrough (GIF)
 Original Gif with required implementations
@@ -46,8 +46,8 @@ Original Gif with required implementations
 4. Added Background image to the game for more style
 ![](http://g.recordit.co/DIAMd90rSE.gif)
 
-5. Added a timer to the game (limit can be changed, but in demo it was 20 seconds)
-![](http://g.recordit.co/rr3JFq45kt.gif)
+5. Added a timer to the game [15 Seconds per turn] (limit can be changed)
+![](http://g.recordit.co/cbSxPcCYzz.gif)
 
 ## Reflection Questions
 1. If you used any outside resources to help complete your submission (websites, books, people, etc) list them here. 
@@ -57,7 +57,7 @@ Original Gif with required implementations
 2. What was a challenge you encountered in creating this submission (be specific)? How did you overcome it? 
 
 
-    One of the challenges I encountered was that I was unable to figure out what to specifically use when it came to changing randomizing the pattern each time the game was played. I knew I had to create another function to handle randomizing the pattern but I was unsure on how to approach it. I was then able to solve my issue by creating a function called randomizer() that randomizes the array with a preset pattern of [1, 2, 3 ,4, 5] since I had five buttons. The function would be called each time the start button was pressed and would rearrange the array so no pattern would happen again each time the game is played. 
+    One of the challenges I encountered was that I was unable to figure out what to specifically use when it came to changing randomizing the pattern each time the game was played. I knew I had to create another function to handle randomizing the pattern but I was unsure on how to approach it. I was then able to solve my issue by creating a function called randomizer() that randomizes the array with a preset pattern of [1, 2, 3 ,4, 5] since I had five buttons. The function would be called each time the start button was pressed and would rearrange the array so no pattern would happen again each time the game is played.  Another challenge was finding how to add the timer feature because I was not familiar with how time worked in code, eventually I did some research on YouTube and found out a way to calculate and add a timer function per turn.
 
     Another challenge I encountered is creating the three lives implementation into the Light and Sound Memory Game. It wasn't a hard problem to solve at all, I was able to make an accumulator that would count each time a person makes a mistake and if a person makes three mistakes then the game would end. The problem was mainly showing the user how many mistakes made themselves. It took me less than half an hour to do this but I ran into a bug where the mistake counter was one behind after every mistake and to solve this I accumulated to the html before the function addMistake() (my accumulation function) was called.
 
